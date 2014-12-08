@@ -22,8 +22,8 @@ Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the conf
 1. Install RetroPie as per [this fantastic lifehacker post](http://lifehacker.com/how-to-turn-your-raspberry-pi-into-a-retro-game-console-498561192).
     * **NOTE: Do NOT do step three**
 2. SSH into your RetroPie and open retroarch.cfg
-    ** location: `/opt/retropie/configs/all/retroarch.cfg`
-3. Replace the whole file with the one in this repo
+    * location: `/opt/retropie/configs/all/retroarch.cfg`
+3. Replace the whole file with the retroarch.cfg in this repo
 4. Connect your second X-Arcade to a computer and the ps/2 keyboard to the x-arcade
     * you only need to connect it to a computer to power the X-Arcade
 5. Follow [X-Gaming's joystick programming instructions](http://www.xgaming.com/support/questions/15/X-Arcade%E2%84%A2+Programming+Guide) and program the second X-Arcade to match the Player 3 and Player 4 keyboard setups.
@@ -33,7 +33,7 @@ Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the conf
 
 ## A note on Arcade Mames
 
-For whatever reason, the mapping doesn't match in Mame. Connect a keyboard to your RasPi and go update the system-wide controls by hitting `tab`
+For whatever reason, the mapping doesn't match in Mame. Connect a keyboard to your RasPi and go update the system-wide controls while inside any MAME game by hitting `tab`. Test your games...I ran into a few other MAME's that needed updating.
 
 ## What's different in this retroarch.cfg
 
@@ -54,7 +54,7 @@ input_enable_hotkey = num2
 
 ### Configuration for four players:
 
-If you've programmed your second X-Arcade correctly it will match player 3 & 4 below
+If you've programmed your second X-Arcade correctly it will match players 3 & 4 below
 
 ```
 input_player1_a = z
@@ -107,6 +107,9 @@ input_player4_y = b
 ```
 
 ## What buttons am I smashing?
+
+This is what X-Arcade uses for it's default button-to-keyboard mapping
+![x-arcade default buttons](x-arcade-default-keyboard-mapping.jpg)
 
 This is the setup for what the system understands you to be clicking:
 
