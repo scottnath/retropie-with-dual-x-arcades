@@ -1,4 +1,117 @@
-retropie-with-dual-x-arcades
+RetroPie with Two Dual X-Arcade Joysticks
 ============================
 
-Repo for setting up RetroPie with two dual-joystick X-Arcades
+Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the configuration file, retroarch.cfg, which has been tested and works with the exact hardware and software setups below.
+
+![dual x-arcade joysticks with retropie](https://lh6.googleusercontent.com/-UlA9zcX3DnE/VIUVWvWiPQI/AAAAAAAAR-I/4orqj65ZltQ/s288/20141207_153815.jpg)
+
+## Hardware Requirements
+
+* Raspberry Pi b+
+* 2 X-Arcade Dual Joysticks
+* ps/2 keyboard (old style keyboard connection, [wikipedia](http://en.wikipedia.org/wiki/PS/2_port))
+
+## Software Requirements
+
+* [RetroPie 2.3 Image](http://blog.petrockblock.com/download/retropie-project-image/)
+* text editor
+* a way to ssh into the Raspberry Pi
+
+## Steps to get it up and running
+
+1. Install RetroPie as per [this fantastic lifehacker post](http://lifehacker.com/how-to-turn-your-raspberry-pi-into-a-retro-game-console-498561192).
+    * **NOTE: Do NOT do step three**
+2. SSH into your RetroPie and open retroarch.cfg
+    ** location: `/opt/retropie/configs/all/retroarch.cfg`
+3. Replace the whole file with the one in this repo
+4. Connect your second X-Arcade to a computer and the ps/2 keyboard to the x-arcade
+    * you only need to connect it to a computer to power the X-Arcade
+5. Follow [X-Gaming's joystick programming instructions](http://www.xgaming.com/support/questions/15/X-Arcade%E2%84%A2+Programming+Guide) and program the second X-Arcade to match the Player 3 and Player 4 keyboard setups.
+    * [download instructions file - with pictures!](x-arcade-programming-instructions-with-button-layout.jpg)
+6. Reboot RasPi
+7. Profit
+
+## A note on Arcade Mames
+
+For whatever reason, the mapping doesn't match in Mame. Connect a keyboard to your RasPi and go update the system-wide controls by hitting `tab`
+
+## What's different in this retroarch.cfg
+
+### Added an escape key option
+
+You need the escape key to exit the games you're in. This change gives you the ability to exit the games by hitting both 1st and 2nd player buttons on the first X-Arcade
+
+```
+input_exit_emulator = escape
+input_enable_hotkey = escape
+```
+becomes:
+```
+input_exit_emulator = num1
+input_enable_hotkey = num2
+```
+
+
+### Configuration for four players:
+
+If you've programmed your second X-Arcade correctly it will match player 3 & 4 below
+
+```
+input_player1_a = z
+input_player1_b = shift
+input_player1_down =  keypad2
+input_player1_l = space
+input_player1_left =  y
+input_player1_r = x
+input_player1_right = keypad6
+input_player1_select =  c
+input_player1_start = num5
+input_player1_up =  keypad8
+input_player1_x = num0
+input_player1_y = ctrl
+input_player2_a = e
+input_player2_b = w
+input_player2_down =  f
+input_player2_l = q
+input_player2_left =  d
+input_player2_r = leftbracket
+input_player2_right = g
+input_player2_select =  rightbracket
+input_player2_start = num6
+input_player2_up =  r
+input_player2_x = s
+input_player2_y = a
+input_player3_a = keypad0
+input_player3_b = o
+input_player3_down =  k
+input_player3_l = enter
+input_player3_left =  j
+input_player3_r = t
+input_player3_right = l
+input_player3_select =  num9
+input_player3_start = num7
+input_player3_up =  i
+input_player3_x = rshift
+input_player3_y = rctrl
+input_player4_a = keypad5
+input_player4_b = m
+input_player4_down =  n
+input_player4_l = h
+input_player4_left =  v
+input_player4_r = keypad7
+input_player4_right = u
+input_player4_start = num8
+input_player4_up =  y
+input_player4_x = keypad1
+input_player4_y = b
+```
+
+## What buttons am I smashing?
+
+This is the setup for what the system understands you to be clicking:
+
+![x-arcade actual buttons](x-arcade-buttons-the-goal.jpg)
+
+## Thanks
+
+* [Original solution to get one controller set working](http://blog.petrockblock.com/forums/topic/x-arcade-dual-joystick-setup-issues/) - thank you Thex!
