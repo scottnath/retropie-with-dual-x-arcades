@@ -13,7 +13,7 @@ Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the conf
 
 ## Software Requirements
 
-* [RetroPie 2.3 Image](http://blog.petrockblock.com/download/retropie-project-image/)
+* [RetroPie SD Card Image](http://blog.petrockblock.com/download/retropie-project-image/)
 * text editor
 * a way to ssh into the Raspberry Pi
 
@@ -23,85 +23,75 @@ Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the conf
     * **NOTE: Do NOT do step three**
 2. SSH into your RetroPie and open retroarch.cfg
     * location: `/opt/retropie/configs/all/retroarch.cfg`
-3. Replace the whole file with the retroarch.cfg in this repo
 4. Connect your second X-Arcade to a computer and the ps/2 keyboard to the x-arcade
     * you only need to connect it to a computer to power the X-Arcade
 5. Follow [X-Gaming's joystick programming instructions](http://www.xgaming.com/support/questions/15/X-Arcade%E2%84%A2+Programming+Guide) and program the second X-Arcade to match the Player 3 and Player 4 keyboard setups.
-    * [download instructions file - with pictures!](x-arcade-programming-instructions-with-button-layout.jpg)
+    * [download instructions file - with pictures!](images/x-arcade-programming-instructions-with-button-layout.jpg)
 6. Reboot RasPi
 7. Profit
 
 ## A note on Arcade Mames
 
-For whatever reason, the mapping doesn't match in Mame. Connect a keyboard to your RasPi and go update the system-wide controls while inside any MAME game by hitting `tab`. Test your games...I ran into a few other MAME's that needed updating.
+For whatever reason, the mapping doesn't match in Mame. For instance, for player one the joysticks are up/down/left/right, not the keypad numbers.
+
+To fix, connect a keyboard to your RasPi and go update the system-wide controls while inside any MAME game by hitting `tab`. Test your games...I ran into a few other MAME's that needed updating.
+
+Just do it. You know this is your whole weekend plan anyway.
 
 ## What's different in this retroarch.cfg
 
-### Added an escape key option
-
-You need the escape key to exit the games you're in. This change gives you the ability to exit the games by hitting both 1st and 2nd player buttons on the first X-Arcade
-
-```
-input_exit_emulator = escape
-input_enable_hotkey = escape
-```
-becomes:
-```
-input_exit_emulator = num1
-input_enable_hotkey = num2
-```
-
-
 ### Configuration for four players:
 
-If you've programmed your second X-Arcade correctly it will match players 3 & 4 below
+This programming matches my X-Arcade configuration.
 
 ```
+input_exit_emulator = esc
 input_player1_a = z
 input_player1_b = shift
-input_player1_down =  keypad2
+input_player1_down = keypad2
 input_player1_l = space
-input_player1_left =  y
+input_player1_left = keypad4
 input_player1_r = x
 input_player1_right = keypad6
-input_player1_select =  c
-input_player1_start = num5
-input_player1_up =  keypad8
-input_player1_x = num0
+input_player1_select = num5
+input_player1_start = num1
+input_player1_up = keypad8
+input_player1_x = alt
 input_player1_y = ctrl
 input_player2_a = e
 input_player2_b = w
-input_player2_down =  f
+input_player2_down = f
 input_player2_l = q
-input_player2_left =  d
-input_player2_r = leftbracket
+input_player2_left = d
+input_player2_r = [
 input_player2_right = g
-input_player2_select =  rightbracket
-input_player2_start = num6
-input_player2_up =  r
+input_player2_select = num6
+input_player2_start = num2
+input_player2_up = r
 input_player2_x = s
 input_player2_y = a
 input_player3_a = keypad0
 input_player3_b = o
-input_player3_down =  k
+input_player3_down = k
 input_player3_l = enter
-input_player3_left =  j
+input_player3_left = j
 input_player3_r = t
 input_player3_right = l
-input_player3_select =  num9
-input_player3_start = num7
-input_player3_up =  i
+input_player3_select = num7
+input_player3_start = num3
+input_player3_up = i
 input_player3_x = rshift
 input_player3_y = rctrl
 input_player4_a = keypad5
 input_player4_b = m
-input_player4_down =  n
+input_player4_down = n
 input_player4_l = h
-input_player4_left =  v
+input_player4_left = v
 input_player4_r = keypad7
 input_player4_right = u
-input_player4_start = num8
-input_player4_up =  y
+input_player4_select = num8
+input_player4_start = num4
+input_player4_up = y
 input_player4_x = keypad1
 input_player4_y = b
 ```
@@ -109,11 +99,12 @@ input_player4_y = b
 ## What buttons am I smashing?
 
 This is what X-Arcade uses for it's default button-to-keyboard mapping
-![x-arcade default buttons](x-arcade-default-keyboard-mapping.jpg)
+![x-arcade default buttons](images/dual-x-arcade-button-map-default.png)
 
 This is the setup for what the system understands you to be clicking:
 
-![x-arcade actual buttons](x-arcade-buttons-the-goal.jpg)
+![x-arcade left buttons](images/dual-x-arcade-button-map-left.png)
+![x-arcade right buttons](images/dual-x-arcade-button-map-right.png)
 
 ## Thanks
 
