@@ -106,6 +106,10 @@ This is the setup for what the system understands you to be clicking:
 ![x-arcade left buttons](images/dual-x-arcade-button-map-left.png)
 ![x-arcade right buttons](images/dual-x-arcade-button-map-right.png)
 
+## Create your own chart!
+
+![.psd Photoshop button mapping](images/dual-x-arcade-button-mapping.psd)
+
 ## Thanks
 
 * [Original solution to get one controller set working](http://blog.petrockblock.com/forums/topic/x-arcade-dual-joystick-setup-issues/) - thank you Thex!
