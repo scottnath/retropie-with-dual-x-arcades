@@ -108,7 +108,7 @@ This is the setup for what the system understands you to be clicking:
 
 ## Create your own chart!
 
-![.psd Photoshop button mapping](images/dual-x-arcade-button-mapping.psd)
+[.psd Photoshop button mapping](images/dual-x-arcade-button-mapping.psd)
 
 ## Thanks
 
