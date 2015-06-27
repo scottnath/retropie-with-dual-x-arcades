@@ -3,7 +3,7 @@ RetroPie with Two Dual X-Arcade Joysticks
 
 Repo for setting up RetroPie with two dual-joystick X-Arcades. Includes the configuration file, retroarch.cfg, which has been tested and works with the exact hardware and software setups below.
 
-![dual x-arcade joysticks with retropie](https://lh6.googleusercontent.com/-UlA9zcX3DnE/VIUVWvWiPQI/AAAAAAAAR-I/4orqj65ZltQ/s288/20141207_153815.jpg)
+![dual x-arcade joysticks with retropie](images/two-dual-x-arcades.jpg)
 
 ## Hardware Requirements
 
